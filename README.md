@@ -1,2 +1,2 @@
 # Movies_Pro
-This is movie website for beginner web developers
+This movie website is for beginner web developers. It was built using HTML CSS & Javascript
