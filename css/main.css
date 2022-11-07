@@ -1,0 +1,979 @@
+:root {
+    --main-color: #d3ad7f;
+    --red: #cc0000;
+    --redd: #5c1414;
+    --black: #13131a;
+    --bg: #010103;
+    --border: .1rem solid rgba(255, 255, 255, .3);
+    --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+}
+
+* {
+    font-family: 'Audiowide', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: .8rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #5c1414;
+}
+
+body {
+    background: var(--bg);
+}
+
+section {
+    padding: 3rem 7%;
+}
+
+.btn {
+    display: inline-block;
+    font-size: 1.7rem;
+    margin-top: 1rem;
+    padding: .9rem 3rem;
+    color: var(--red);
+    background: var(--main-color);
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    letter-spacing: .1rem;
+}
+
+.heading {
+    font-size: 4rem;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 3rem;
+    letter-spacing: 1.3px;
+}
+
+.heading span {
+    color: var(--red);
+    text-transform: uppercase;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+
+/*
+====================
+Header Styles
+====================
+ */
+.header {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem 7%;
+    border-bottom: 2px solid var(--red);
+    z-index: 1000;
+}
+
+.header .logo img {
+    height: 5rem;
+}
+
+.header .navbar a {
+    font-size: 1.7rem;
+    padding: .5rem 1.5rem;
+    color: whitesmoke;
+    border: .1rem solid transparent;
+}
+
+.header .navbar a.active,
+.header .navbar a:hover {
+    color: var(--red);
+    border: var(--border);
+}
+
+.header .icons i {
+    color: #fff;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-left: 2rem;
+    cursor: pointer;
+}
+
+.header .icons i:hover {
+    color: var(--red);
+}
+
+.header .icons #menu-btn {
+    display: none;
+}
+
+
+.header .search-form {
+    position: absolute;
+    top: 115%;
+    right: 7%;
+    background: #fff;
+    width: 50rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+.header .search-form.active {
+    transform: scaleY(1);
+}
+
+.header .search-form input {
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    color: var(--black);
+    padding: 1rem;
+    text-transform: none;
+}
+
+.header .search-form label {
+    cursor: pointer;
+    font-size: 2.2rem;
+    margin-right: 1.5rem;
+    color: var(--black);
+}
+
+.header .search-form label:hover {
+    color: var(--main-color);
+}
+
+/* Dropdown menu */
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown a {
+    text-transform: capitalize;
+}
+
+/* Dropdown content hidder by default */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--bg);
+    margin-top: .8rem;
+    width: 290px;
+    height: 250px;
+    border-left: .1rem solid rgba(205, 170, 124, 0.2);
+    border-right: .1rem solid rgba(205, 170, 124, 0.2);
+    border-bottom: .1rem solid rgba(205, 170, 124, 0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    display: block;
+    font-size: 1.7rem;
+    text-align: left;
+    color: #fff;
+    margin-bottom: 1rem;
+    padding: 16px 16px;
+    text-decoration: none;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #b9b6b6;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/*
+====================
+Home
+====================
+ */
+.home {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    background: linear-gradient(to right, rgba(4, 9, 30, 0.2), rgba(4, 9, 30, 0)), url(../images/drs.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home .content {
+    max-width: 60rem;
+}
+
+.home .content h3 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.home .content p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    font-weight: lighter;
+    line-height: 1.8;
+    padding: 1rem 0;
+    color: #eee;
+    text-transform: capitalize;
+}
+
+/* Latest Movies */
+.latest-movies {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.latest-movies .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 1.5rem;
+}
+
+.latest-movies .box-container .post-col {
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.latest-movies .box-container .post-col img {
+    width: auto;
+    height: 25rem;
+}
+
+.latest-movies .box-container .post-col:hover {
+    transform: scale(1.1);
+}
+
+.latest-movies .box-container .post-col .content h2 {
+    font-size: 1.7rem;
+    font-weight: 200;
+    color: #b9b6b6;
+    padding: .5rem 0;
+}
+
+.latest-movies .box-container .post-col .content span {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    font-weight: lighter;
+    color: #fff;
+}
+
+.latest-movies .box-container a:hover {
+    color: #fff;
+}
+
+
+
+
+/* Videos Page */
+.movie-title {
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 0 3%;
+    padding-top: 3rem;
+    color: #fff;
+    margin: auto;
+    margin-top: 70px;
+    box-sizing: border-box;
+}
+
+.video {
+    max-width: 55%;
+    max-height: auto;
+    margin: 2rem 3%;
+    padding: 0;
+    border: 1px solid #b2b2b2;
+    border-radius: .5rem;
+}
+
+.video video {
+    width: 100%;
+    height: auto;
+}
+
+.vid-content {
+    padding: 0 3%;
+    margin: auto;
+    margin-bottom: 50rem;
+}
+
+.vid-content span {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #fff;
+}
+
+
+/* 
+==================
+ACTION MOVIE PAGE
+==================
+*/
+.action-home {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    background: linear-gradient(to right, rgba(4, 9, 30, 0.2), rgba(4, 9, 30, 0)), url(../images/f-wall-2.jfif) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.action-home .content {
+    max-width: 60rem;
+}
+
+.action-home .content h3 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.action-home .content p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    font-weight: lighter;
+    line-height: 1.8;
+    padding: 1rem 0;
+    color: #eee;
+    text-shadow: 2px 2px 4px #000000;
+    text-transform: capitalize;
+}
+
+.action-movies {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+    margin-bottom: 5rem;
+}
+
+.action-movies .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 1.5rem;
+}
+
+.action-movies .box-container .post-col {
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.action-movies .box-container .post-col img {
+    width: auto;
+    height: 25rem;
+}
+
+.action-movies .box-container .post-col:hover {
+    transform: scale(1.1);
+}
+
+.action-movies .box-container .post-col .content h2 {
+    font-size: 1.7rem;
+    font-weight: 200;
+    color: #b9b6b6;
+    padding: .5rem 0;
+}
+
+.action-movies .box-container .post-col .content span {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    font-weight: lighter;
+    color: #fff;
+}
+
+.action-movies .box-container a:hover {
+    color: #fff;
+}
+
+
+/* 
+==================
+ANIMATION MOVIE PAGE
+==================
+*/
+.animation-home {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    background: linear-gradient(to right, rgba(4, 9, 30, 0.2), rgba(4, 9, 30, 0)), url(../images/frozen-1.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.animation-home .content {
+    max-width: 60rem;
+}
+
+.animation-home .content h3 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.animation-home .content p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    font-weight: lighter;
+    line-height: 1.8;
+    padding: 1rem 0;
+    color: #eee;
+    text-shadow: 2px 2px 4px #000000;
+    text-transform: capitalize;
+}
+
+.animation-movies {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+    margin-bottom: 5rem;
+}
+
+.animation-movies .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 1.5rem;
+}
+
+.animation-movies .box-container .post-col {
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.animmation-movies .box-container .post-col img {
+    width: auto;
+    height: 25rem;
+}
+
+.animation-movies .box-container .post-col:hover {
+    transform: scale(1.1);
+}
+
+.animation-movies .box-container .post-col .content h2 {
+    font-size: 1.7rem;
+    font-weight: 200;
+    color: #b9b6b6;
+    padding: .5rem 0;
+}
+
+.animation-movies .box-container .post-col .content span {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    font-weight: lighter;
+    color: #fff;
+}
+
+.animation-movies .box-container a:hover {
+    color: #fff;
+}
+
+
+/*
+============== 
+MOVIES PAGE
+==============
+*/
+.movies-home h1 {
+    font-size: 5rem;
+    color: #fff;
+    text-align: center;
+    margin: auto;
+    position: relative;
+}
+
+.movies-home {
+    width: 100%;
+    margin-top: 10rem;
+    padding: 0;
+}
+
+.movies-home .wrapper {
+    background: #010103;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+.swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    max-width: 250px;
+    max-height: auto;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+    -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.2));
+}
+
+/* featured slide */
+.featured {
+    font-size: 4rem;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    margin: auto;
+    margin-top: 5rem;
+}
+
+.f-movies {
+    background: #010103;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid #b2b2b2;
+    border-bottom: 1px solid #b2b2b2;
+}
+
+.f-movies .swiper-pagination {
+    color: #fff;
+}
+
+
+
+/*
+=================== 
+Page-footer styles
+===================
+*/
+.page-footer {
+    font-size: 1.3rem;
+    background: var(--bg);
+    padding: 1rem 5%;
+    box-shadow: 0 .5rem 1.5rem lightblue;
+    margin-top: 5rem;
+}
+
+.page-footer .footer-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem 5%;
+    align-items: center;
+    border-bottom: 1px solid #b2b2b2;
+}
+
+.page-footer .footer-top img {
+    width: 200px;
+}
+
+.page-footer .footer-top .footer-icons {
+    font-size: 25px;
+}
+
+.page-footer .footer-top .footer-icons a {
+    color: #b9b6b6;
+    margin-left: 10px;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.page-footer .footer-top .footer-icons a:hover {
+    color: var(--main-color)
+}
+
+.page-footer .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: .7rem;
+    padding: 4rem 5%;
+    border-bottom: 1px solid #b2b2b2;
+}
+
+.page-footer .box-container .box h3 {
+    padding: .5rem 0;
+    font-size: 2.5rem;
+    color: #b2b2b2;
+}
+
+.page-footer .box-container .box a {
+    display: block;
+    padding: .5rem 0;
+    font-size: 1.5rem;
+    color: var(--main-color);
+}
+
+.page-footer .box-container .box a:hover {
+    color: var(--red);
+    text-decoration: underline;
+}
+
+.page-footer .box-container span {
+    display: block;
+    padding: .5rem 0;
+    color: var(--light-color);
+}
+
+.page-footer .credit {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #b2b2b2;
+    padding: .5rem;
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.page-footer .credit span {
+    color: var(--red);
+}
+
+/* jump to top */
+.topbtn {
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    right: 2%;
+    bottom: 8%;
+    background: #cdaa7c;
+    cursor: pointer;
+}
+
+/* bookings */
+.main {
+    max-width: 100%;
+    height: auto;
+    background: url(/images/buildings.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+
+.bookings-title {
+    font-size: 2rem;
+    text-align: center;
+    color: #fff;
+    margin-top: 10rem;
+    position: relative;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.bookings-form form {
+    max-width: 60rem;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1.5rem lightblue;
+    border: .2rem solid rgba(0, 0, 0, .2);
+    background: rgba(0, 0, 0, .2);
+    padding: 1.5rem;
+    margin: 0 auto;
+}
+
+.bookings-form form .reset {
+    margin-left: 5rem;
+}
+
+.bookings-form form .inputBox {
+    display: block;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.bookings-form form .inputBox .input {
+    width: 100%;
+}
+
+.bookings-form form .inputBox .input span {
+    display: block;
+    padding: .5rem 0;
+    font-size: 1.7rem;
+    color: #13131a;
+    font-weight: 300;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.bookings-form form .inputBox .input label {
+    display: block;
+    padding: .5rem 0;
+    font-size: 1.7rem;
+    color: #13131a;
+    font-weight: 300;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.bookings-form form .inputBox .results {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: .5rem;
+    background: #eee;
+    border-radius: .5rem;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    text-transform: none;
+    margin-bottom: 1rem;
+}
+
+.bookings-form form .inputBox .results label {
+    font-size: 1.7rem;
+    color: #13131a;
+}
+
+.bookings-form form .inputBox .input output {
+    font-size: 1.7rem;
+    color: #13131a;
+}
+
+.bookings-form form .inputBox .input .t-price {
+    color: #fff;
+}
+
+.bookings-form form .inputBox .input input,
+.bookings-form form .inputBox .input textarea {
+    width: 100%;
+    background: #eee;
+    border-radius: .5rem;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    text-transform: none;
+    margin-bottom: 1rem;
+}
+
+.bookings-form form .inputBox fieldset {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: .9rem .5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.bookings-form form .inputBox fieldset legend {
+    width: 100%;
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 12px;
+    background: #5c1414;
+}
+
+.bookings-form form .inputBox select {
+    width: 98%;
+    border-radius: .5rem;
+    padding: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.6rem;
+
+}
+
+.bookings-form form .inputBox select option {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+::placeholder {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries */
+@media (max-width:991px) {
+
+    html {
+        font-size: 55%;
+    }
+
+    .header {
+        padding: 1.5rem 2rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
+
+    .header .logo img {
+        height: 5rem;
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .header .icons #menu-btn {
+        display: inline-block;
+    }
+
+    .header .navbar {
+        width: 30rem;
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background: black;
+        border-top: .2rem solid rgba(255, 255, 255, .9);
+        border-bottom: .2rem solid rgba(255, 255, 255, .9);
+        height: calc(100vh - 9.5rem);
+        transition: .5s;
+    }
+
+    .header .navbar.active {
+        right: 0;
+    }
+
+    .header .navbar a {
+        display: block;
+        color: whitesmoke;
+        font-size: 2rem;
+        margin: 1.5rem;
+        padding: .5rem;
+    }
+
+    .header .icons i {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .header .search-form {
+        width: 90%;
+        right: 2rem;
+    }
+
+    /* home slider query */
+    .home {
+        background-size: cover;
+        background-position: left;
+        justify-content: left;
+        text-align: center;
+    }
+
+    .home .content h3 {
+        font-size: 4.5rem;
+    }
+
+    .home .content p {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    /* grid */
+    .latest-movies .box-container .post-col img {
+        width: auto;
+        height: 25rem;
+    }
+}
+
+@media (max-width:450px) {
+
+    html {
+        font-size: 50%;
+    }
+
+    .latest-movies .box-container {
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 2fr));
+        align-items: center;
+        margin: auto;
+    }
+
+    .video {
+        max-width: 100%;
+        max-height: auto;
+        margin: auto;
+        padding: auto;
+        border: none;
+    }
+
+    /* footer */
+    .page-footer .footer-top {
+        flex-direction: column;
+    }
+
+}
+
+@media (max-width: 375px) {
+    .home {
+        background-position: left;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .latest-movies .box-container .post-col {
+        padding: 1.25rem 3.5%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .latest-movies .box-container .post-col img {
+        max-width: 50%;
+        height: auto;
+    }
+
+    .movie-title {
+        font-size: 1.7rem;
+    }
+
+    .vid-content {
+        font-size: 1.5rem;
+    }
+}
